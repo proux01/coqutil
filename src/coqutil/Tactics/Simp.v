@@ -2,7 +2,7 @@
    but only those that can be inverted without having to first simplify them to
    see that they're an invertible Inductive, and it also does not destruct records. *)
 
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 Require Import coqutil.Tactics.invert_hyp.
 
 Ltac head_of_app e :=

@@ -1,4 +1,5 @@
-Require Import Coq.ZArith.BinInt coqutil.Z.Lia.
+From Coq Require Import BinInt.
+Require Import coqutil.Z.Lia.
 Require Import coqutil.Word.Interface coqutil.Map.Interface.
 Require coqutil.Map.SortedList.
 

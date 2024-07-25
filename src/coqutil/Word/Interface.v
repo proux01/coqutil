@@ -1,6 +1,6 @@
 (* Specification of two's complement machine words wrt Z *)
 
-Require Import Coq.ZArith.BinIntDef Coq.ZArith.BinInt.
+From Coq Require Import BinIntDef BinInt.
 Local Open Scope Z_scope.
 
 Module word.

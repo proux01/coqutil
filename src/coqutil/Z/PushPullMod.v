@@ -1,4 +1,4 @@
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 Local Open Scope Z_scope.
 
 Module Z.

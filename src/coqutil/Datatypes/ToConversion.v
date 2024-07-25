@@ -18,7 +18,7 @@ Notation "a 'to' R" :=
 
 Require Import coqutil.Byte.
 Require Import coqutil.Word.Interface.
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 
 (* We define all 4*3 conversions between {byte, word, nat, Z}.
    If there's no direct conversion, we make a detour through Z,

@@ -1,4 +1,4 @@
-Require Import Coq.ZArith.BinInt.
+From Coq Require Import BinInt.
 Local Open Scope Z_scope.
 
 (* This will hopefully eventually become a part of coq COQBUG(8062) *)

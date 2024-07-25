@@ -1,4 +1,4 @@
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 Require Import coqutil.Z.bitblast.
 Require Import coqutil.Z.ZLib.
 Require Import coqutil.Z.Lia.

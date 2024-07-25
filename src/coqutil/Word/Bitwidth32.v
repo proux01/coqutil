@@ -1,4 +1,4 @@
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 Require Export coqutil.Word.Bitwidth.
 
 #[export] Instance BW32: Bitwidth 32 := {

@@ -2,7 +2,7 @@
    more lemmas to be applied in hypotheses and using an autorewrite db to add
    more rewrites *)
 Require Import coqutil.Tactics.autoforward coqutil.Tactics.destr.
-Require Import Coq.ZArith.BinInt Coq.NArith.BinNat.
+From Coq Require Import BinInt BinNat.
 
 Ltac is_var_without_rhs x :=
   is_var x; assert_fails (clearbody x).

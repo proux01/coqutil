@@ -1,4 +1,4 @@
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 Require coqutil.Decidable.
 Require Export coqutil.Tactics.forward.
 Require Export coqutil.Tactics.destr.

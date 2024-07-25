@@ -1,6 +1,6 @@
 Require Import coqutil.Macros.subst coqutil.Macros.unique coqutil.Map.Interface.
-Require Coq.Lists.List.
-Require Coq.Logic.Eqdep_dec.
+From Coq Require List.
+From Coq Require Eqdep_dec.
 
 (* TODO: move me? *)
 Definition minimize_eq_proof{A: Type}(eq_dec: forall (x y: A), {x = y} + {x <> y}){x y: A}    (pf: x = y): x = y :=

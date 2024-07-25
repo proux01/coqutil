@@ -1,5 +1,5 @@
 From Coq Require Import ZArith.
-Require Coq.setoid_ring.Ring_theory.
+From Coq Require Ring_theory.
 Require Import coqutil.Word.Interface coqutil.Word.Properties.
 
 Section WithWord. Local Set Default Proof Using "All".

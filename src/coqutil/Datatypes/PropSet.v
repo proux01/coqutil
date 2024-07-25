@@ -1,8 +1,8 @@
 Require Import Coq.Lists.List. Import ListNotations.
 Require Import Coq.Classes.Morphisms.
 Require Import Coq.Classes.RelationClasses.
-Require Import Coq.Logic.PropExtensionality.
-Require Import Coq.Logic.FunctionalExtensionality.
+From Coq Require Import PropExtensionality.
+From Coq Require Import FunctionalExtensionality.
 Require Import coqutil.Decidable.
 Require Import coqutil.Tactics.destr.
 

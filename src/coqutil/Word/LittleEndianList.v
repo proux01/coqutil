@@ -1,5 +1,6 @@
-Require Import Coq.ZArith.ZArith.
-Require Import coqutil.Z.Lia Coq.micromega.Lia.
+From Coq Require Import ZArith.
+Require Import coqutil.Z.Lia.
+From Coq Require Import Lia.
 Require Import coqutil.Z.bitblast.
 Require Import coqutil.Z.prove_Zeq_bitwise.
 Require Import coqutil.Byte.

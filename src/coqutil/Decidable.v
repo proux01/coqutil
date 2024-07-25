@@ -1,9 +1,9 @@
 Require Import coqutil.sanity.
-Require Import Coq.Arith.PeanoNat.
-Require Import Coq.Arith.Compare_dec.
-Require Import Coq.ZArith.BinInt.
-Require Import Coq.NArith.NArith.
-Require Coq.Strings.String.
+From Coq Require Import PeanoNat.
+From Coq Require Import Compare_dec.
+From Coq Require Import BinInt.
+From Coq Require Import NArith.
+From Coq Require String.
 
 (* needed because it unfolds to Nat.leb and then typeclass search picks Nat.leb_spec
    instead of Nat.ltb_spec *)

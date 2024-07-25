@@ -1,5 +1,5 @@
 Require Coq.Init.Byte Coq.Strings.Byte.
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 
 Local Open Scope Z_scope.
 

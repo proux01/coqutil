@@ -3,7 +3,7 @@
    to that order, and show that the reordered list is a permutation
    of the original list. *)
 
-Require Import Coq.Arith.PeanoNat.
+From Coq Require Import PeanoNat.
 Require Import coqutil.Sorting.Permutation Coq.Sorting.Mergesort.
 Require Import coqutil.Tactics.destr.
 Require Import coqutil.Datatypes.List.

@@ -64,8 +64,8 @@ Proof. induction k1, k2, k3; strict_order_t. Qed.
 Lemma ltb_total : forall k1 k2, ltb k1 k2 = false -> ltb k2 k1 = false -> k1 = k2.
 Proof. induction k1, k2; strict_order_t. Qed.
 
-Require Import Coq.Numbers.DecimalString.
-Require Import Coq.Numbers.DecimalNat.
+From Coq Require Import DecimalString.
+From Coq Require Import DecimalNat.
 
 Definition of_nat(n: nat): string :=
   DecimalString.NilEmpty.string_of_uint (Nat.to_uint n).

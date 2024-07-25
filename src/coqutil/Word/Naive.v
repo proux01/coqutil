@@ -1,4 +1,5 @@
-Require Import Coq.ZArith.BinIntDef Coq.ZArith.BinInt coqutil.Z.Lia.
+From Coq Require Import BinIntDef BinInt.
+Require Import coqutil.Z.Lia.
 Require Import coqutil.Tactics.destr.
 Require Import coqutil.sanity coqutil.Word.Interface. Import word.
 Local Open Scope Z_scope.

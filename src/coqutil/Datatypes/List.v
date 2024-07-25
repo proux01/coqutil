@@ -1,11 +1,11 @@
 Require Import coqutil.sanity.
 Require Import coqutil.Decidable.
 Require Import coqutil.Tactics.destr coqutil.Tactics.Tactics.
-Require Import Coq.micromega.Lia.
+From Coq Require Import Lia.
 Require Import coqutil.Z.Lia.
 Require Import coqutil.Datatypes.Option.
-Require Import Coq.Arith.PeanoNat.
-Require Import Coq.Lists.List. Import ListNotations.
+From Coq Require Import PeanoNat.
+From Coq Require Import List. Import ListNotations.
 Require Import coqutil.Sorting.Permutation.
 
 Definition enumerate [A] start xs := combine (seq start (@length A xs)) xs.
@@ -1821,7 +1821,7 @@ Section MoreUpdLemmas.
 End MoreUpdLemmas.
 
 Section WithZ. Local Set Default Proof Using "All".
-  Import Coq.ZArith.BinInt.
+  Import BinInt.
   Local Open Scope Z_scope.
   Lemma splitZ_spec [A] (xsys : list A) i (H : 0 <= i < Z.of_nat (length xsys)) :
     let xs := firstn (Z.to_nat i) xsys in

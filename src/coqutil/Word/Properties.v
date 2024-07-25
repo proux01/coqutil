@@ -1,9 +1,9 @@
 From Coq Require Import ZArith.
-Require Import Coq.ZArith.Zpow_facts.
+From Coq Require Import Zpow_facts.
 Require Import coqutil.Z.div_mod_to_equations.
 Require Import coqutil.Z.Lia Btauto.
 Require Import coqutil.Z.PushPullMod.
-Require Coq.setoid_ring.Ring_theory.
+From Coq Require Ring_theory.
 Require Import coqutil.Z.bitblast.
 Require Import coqutil.Word.Interface. Import word.
 

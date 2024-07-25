@@ -1,4 +1,4 @@
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 Require Export coqutil.Word.Interface.
 
 Class Bitwidth(width: Z): Prop := {

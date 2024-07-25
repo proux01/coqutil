@@ -1,4 +1,4 @@
-Require Import Coq.micromega.Lia.
+From Coq Require Import Lia.
 Require Import Ltac2.Ltac2.
 
 Module Zify.

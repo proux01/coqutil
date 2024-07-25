@@ -1,7 +1,7 @@
 Require Import coqutil.Datatypes.Inhabited.
 Require Coq.Lists.List coqutil.Datatypes.List.
-Require Import Coq.ZArith.ZArith. Local Open Scope Z_scope.
-Require Import Coq.micromega.Lia.
+From Coq Require Import ZArith. Local Open Scope Z_scope.
+From Coq Require Import Lia.
 
 Module List.
   Section WithA.

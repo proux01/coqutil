@@ -1,4 +1,4 @@
-Require Import Coq.Arith.PeanoNat Coq.NArith.BinNat Coq.ZArith.BinInt.
+From Coq Require Import PeanoNat BinNat BinInt.
 Require Import coqutil.Tactics.autoforward.
 
 (* If `bool_comparison x y = true/false` appears as a hypothesis, it

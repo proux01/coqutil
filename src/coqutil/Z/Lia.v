@@ -1,5 +1,5 @@
-Require Import Coq.ZArith.ZArith.
-Require Import Coq.micromega.Lia.
+From Coq Require Import ZArith.
+From Coq Require Import Lia.
 
 Ltac is_lia_bool p :=
   lazymatch p with

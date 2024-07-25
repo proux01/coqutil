@@ -1,7 +1,7 @@
 Require Import coqutil.Word.LittleEndian.
-Require Import Coq.micromega.ZifyClasses.
-Require Import Coq.micromega.Lia.
-Require Import Coq.ZArith.ZArith. Local Open Scope Z_scope.
+From Coq Require Import ZifyClasses.
+From Coq Require Import Lia.
+From Coq Require Import ZArith. Local Open Scope Z_scope.
 Require Import coqutil.Byte.
 Import coqutil.Datatypes.HList.
 

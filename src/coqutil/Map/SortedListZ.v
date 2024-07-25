@@ -1,7 +1,7 @@
 Require Import coqutil.sanity.
 Require Import coqutil.Map.Interface coqutil.Map.SortedList.
-Require Import Coq.ZArith.ZArith.
-Require Import Coq.micromega.Lia.
+From Coq Require Import ZArith.
+From Coq Require Import Lia.
 
 Lemma Z_strict_order: SortedList.parameters.strict_order Z.ltb.
 Proof. constructor; lia. Qed.

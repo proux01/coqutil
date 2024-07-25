@@ -1,9 +1,9 @@
 (* same application area as "bitblast", but a bit more complex and a bit more powerful *)
 
-Require Import Coq.ZArith.ZArith.
+From Coq Require Import ZArith.
 Require Import coqutil.Z.Lia.
 Require Import coqutil.Z.BitOps.
-Require Export Coq.setoid_ring.ZArithRing.
+From Coq Require Export ZArithRing.
 Require Import Coq.btauto.Btauto.
 
 Local Open Scope bool_scope.

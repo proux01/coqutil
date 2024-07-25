@@ -1,6 +1,6 @@
-Require Import Coq.Logic.FunctionalExtensionality Coq.Logic.PropExtensionality.
+From Coq Require Import FunctionalExtensionality PropExtensionality.
 Require Import coqutil.Tactics.destr coqutil.Decidable.
-Require Import  coqutil.Map.Interface coqutil.Map.Properties.
+Require Import coqutil.Map.Interface coqutil.Map.Properties.
 
 Module map.
   Section WithMap.

@@ -1,4 +1,4 @@
-Require Import Coq.ZArith.ZArith. Open Scope Z_scope.
+From Coq Require Import ZArith. Open Scope Z_scope.
 Require Import coqutil.Word.Interface coqutil.Word.Properties.
 Require Import coqutil.Z.BitOps.
 Require Import coqutil.Tactics.Tactics.
