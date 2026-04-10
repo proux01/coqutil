@@ -5,7 +5,6 @@ Module Zify.
   Ltac2 zify () := ltac1:(Zify.zify).
 End Zify.
 
-Ltac2 xlia_zchecker () := ltac1:(xlia zchecker).
 Ltac2 lia0 () := ltac1:(lia).
 Ltac2 Notation lia := lia0 ().
 
