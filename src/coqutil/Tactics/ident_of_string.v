@@ -50,9 +50,11 @@ Proof.
   (* time *) do 1000 (intro_as_string s; revert ab_cdef_gh). (*0.5s*)
 Abort.
 
+Import Init.Decimal.
+
 Local Set Warnings "-abstract-large-number".
 Goal forall x:nat, True.
 Proof.
-  let s := eval vm_compute in (string_of_list_ascii (List.repeat "a"%char 10000)) in
+  let s := eval vm_compute in (string_of_list_ascii (List.repeat "a"%char (Nat.of_num_uint 10000%uint))) in
   (* time *) intro_as_string s (*0.4s*).
 Abort.
