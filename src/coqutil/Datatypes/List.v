@@ -318,15 +318,27 @@ Section WithNonmaximallyInsertedA. Local Set Default Proof Using "All".
     case (IHl H) as (i&Hi). exists (S i); cbn; eauto.
   Qed.
 
+  Lemma option_all_Some_iff: forall (l1: list (option A)) (l2: list A),
+    option_all l1 = Some l2 <-> l1 = map Some l2.
+  Proof.
+    split.
+    - revert l2. induction l1 as [|o l1 IH]; intros l2 H; cbn in H.
+      + inversion H. reflexivity.
+      + destruct o; try discriminate.
+        destruct (option_all l1); try discriminate.
+        inversion H; subst. cbn. f_equal.
+        eapply IH. reflexivity.
+    - intro H. subst l1. induction l2; cbn.
+      + reflexivity.
+      + rewrite IHl2. reflexivity.
+  Qed.
+
   Lemma length_option_all: forall {l1: list (option A)} {l2: list A},
     option_all l1 = Some l2 ->
     length l2 = length l1.
   Proof.
-    induction l1; cbn; intros.
-    { inversion H. trivial. }
-    { case a in *; try inversion H.
-      case (option_all l1) in *; try inversion H.
-      subst. cbn. eapply f_equal, IHl1; trivial. }
+    intros l1 l2 H. apply option_all_Some_iff in H. subst l1.
+    rewrite length_map. reflexivity.
   Qed.
 
   Lemma nth_error_option_all: forall {l1: list (option A)} {l2: list A} (i: nat),
