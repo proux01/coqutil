@@ -103,7 +103,7 @@ Section WithWidth. Local Set Default Proof Using "All".
 
   Context (width_nonneg : Z.lt 0 width).
 
-  Global Instance gen_ok : word.ok gen_word.
+  #[local] Instance gen_ok : word.ok gen_word.
   Proof.
     split; intros;
       repeat match goal with
@@ -137,50 +137,75 @@ Definition ok width: 0 < width -> word.ok (word width) :=
 (** [Add Ring] for sizes used in instruction sets of common processors *)
 Require coqutil.Word.Properties.
 Notation word1 := (word 1%Z).
-#[global] Instance word1_ok : word.ok word1 := ok 1 eq_refl.
+Definition word1_ok : word.ok word1 := ok 1 eq_refl.
+Notation word8 := (word 8%Z).
+Definition word8_ok : word.ok word8 := ok 8 eq_refl.
+Notation word16 := (word 16%Z).
+Definition word16_ok : word.ok word16 := ok 16 eq_refl.
+Notation word32 := (word 32%Z).
+Definition word32_ok : word.ok word32 := ok 32 eq_refl.
+Notation word64 := (word 64%Z).
+Definition word64_ok : word.ok word64 := ok 64 eq_refl.
+Notation word128 := (word 128%Z).
+Definition word128_ok : word.ok word128 := ok 128 eq_refl.
+Notation word256 := (word 256%Z).
+Definition word256_ok : word.ok word256 := ok 256 eq_refl.
+Notation word512 := (word 512%Z).
+Definition word512_ok : word.ok word512 := ok 512 eq_refl.
+
+(* Automatically deduce instances for word and word.ok for concrete widths.
+Note: Exported hints are only active when running Import on this file. *)
+
+#[export] Hint Extern 1 (word 1) => exact word1 : typeclass_instances.
+#[export] Hint Extern 1 (word 8) => exact word8 : typeclass_instances.
+#[export] Hint Extern 1 (word 16) => exact word16 : typeclass_instances.
+#[export] Hint Extern 1 (word 32) => exact word32 : typeclass_instances.
+#[export] Hint Extern 1 (word 64) => exact word64 : typeclass_instances.
+#[export] Hint Extern 1 (word 128) => exact word128 : typeclass_instances.
+#[export] Hint Extern 1 (word 256) => exact word256 : typeclass_instances.
+#[export] Hint Extern 1 (word 512) => exact word512 : typeclass_instances.
+
+#[export] Hint Extern 1 (word.ok word1) => exact word1_ok : typeclass_instances.
+#[export] Hint Extern 1 (word.ok word8) => exact word8_ok : typeclass_instances.
+#[export] Hint Extern 1 (word.ok word16) => exact word16_ok : typeclass_instances.
+#[export] Hint Extern 1 (word.ok word32) => exact word32_ok : typeclass_instances.
+#[export] Hint Extern 1 (word.ok word64) => exact word64_ok : typeclass_instances.
+#[export] Hint Extern 1 (word.ok word128) => exact word128_ok : typeclass_instances.
+#[export] Hint Extern 1 (word.ok word256) => exact word256_ok : typeclass_instances.
+#[export] Hint Extern 1 (word.ok word512) => exact word512_ok : typeclass_instances.
+
 Add Ring wring1 : (Properties.word.ring_theory (word := word1))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word1)),
        constants [Properties.word_cst]).
-Notation word8 := (word 8%Z).
-#[global] Instance word8_ok : word.ok word8 := ok 8 eq_refl.
 Add Ring wring8 : (Properties.word.ring_theory (word := word8))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word8)),
        constants [Properties.word_cst]).
-Notation word16 := (word 16%Z).
-#[global] Instance word16_ok : word.ok word16 := ok 16 eq_refl.
 Add Ring wring16 : (Properties.word.ring_theory (word := word16))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word16)),
        constants [Properties.word_cst]).
-Notation word32 := (word 32%Z).
-#[global] Instance word32_ok : word.ok word32 := ok 32 eq_refl.
 Add Ring wring32 : (Properties.word.ring_theory (word := word32))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word32)),
        constants [Properties.word_cst]).
-Notation word64 := (word 64%Z).
-#[global] Instance word64_ok : word.ok word64 := ok 64 eq_refl.
 Add Ring wring64 : (Properties.word.ring_theory (word := word64))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word64)),
        constants [Properties.word_cst]).
-Notation word128 := (word 128%Z).
-#[global] Instance word128_ok : word.ok word128 := ok 128 eq_refl.
 Add Ring wring128 : (Properties.word.ring_theory (word := word128))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word128)),
        constants [Properties.word_cst]).
-Notation word256 := (word 256%Z).
-#[global] Instance word256_ok : word.ok word256 := ok 256 eq_refl.
 Add Ring wring256 : (Properties.word.ring_theory (word := word256))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word256)),
        constants [Properties.word_cst]).
-Notation word512 := (word 512%Z).
-#[global] Instance word512_ok : word.ok word512 := ok 512 eq_refl.
 Add Ring wring512 : (Properties.word.ring_theory (word := word512))
       (preprocess [autorewrite with rew_word_morphism],
        morphism (Properties.word.ring_morph (word := word512)),
        constants [Properties.word_cst]).
+
+Arguments word.of_Z {_} {_} !_.
+Arguments word.unsigned {_} {_} !_.
