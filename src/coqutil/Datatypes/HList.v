@@ -150,6 +150,23 @@ Module tuple.
         end.
     End WithF.
 
+    Lemma option_all_Some_iff {n}
+        (xs : tuple (option A) n) (ys : tuple A n) :
+      option_all xs = Some ys <-> xs = map Some ys.
+    Proof.
+      split.
+      - revert xs ys. induction n; intros xs ys H.
+        + destruct xs, ys. reflexivity.
+        + destruct xs as [ox xs]. destruct ys as [y ys]. cbn in H.
+          destruct ox as [x|]; try discriminate.
+          destruct (option_all xs) eqn:E; try discriminate.
+          inversion H; subst. cbn. f_equal.
+          eapply IHn. exact E.
+      - intro H. subst xs. revert ys. induction n; intros ys.
+        + destruct ys. reflexivity.
+        + destruct ys as [y ys]. cbn. rewrite IHn. reflexivity.
+    Qed.
+
     Section WithStep. Local Set Default Proof Using "All".
       Context (step : A -> A).
       Fixpoint unfoldn (n : nat) (start : A) : tuple A n :=
